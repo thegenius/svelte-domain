@@ -22,19 +22,19 @@ export interface ModelEffects<TContext> {
     [key: string]: Effect<TContext>;
 }
 export declare type FlatModels<TModels extends Models<TContext>, TContext = any> = {
-    [key in keyof TModels]: FlatModel<TModels[key]>;
+    [key in keyof TModels]: FlatModel<TModels[key]['state'], TModels[key]>;
 };
-export declare type FlatModel<TModel extends Model<any>> = {
+export declare type FlatModel<TState, TModel extends Model<TState>> = {
     state: TModel['state'];
 } & {
     subscribe: (value: any, invalidate?: any) => any;
 } & {
     [effectKey in keyof TModel['effects']]: FlatEffect<any, TModel['effects'][effectKey]>;
 } & {
-    [reducerKey in keyof TModel['reducers']]: FlatReducer<TModel['state'], TModel['reducers'][reducerKey]>;
+    [reducerKey in keyof TModel['reducers']]: FlatReducer<TState, TModel['reducers'][reducerKey]>;
 };
-export declare type FlatReducer<TState, TReducer extends Reducer<TState>> = TReducer extends () => any ? () => TState : TReducer extends (state: TState, ...args: infer TRest) => TState ? FlatFunction<TRest, TState> : never;
-export declare type FlatEffect<TContext, TEffect extends Effect<TContext>> = TEffect extends () => infer TReturn ? () => TReturn : TEffect extends (state: TContext, ...args: infer TRest) => infer TReturn ? FlatFunction<TRest, TReturn> : never;
+export declare type FlatReducer<TState, TReducer> = TReducer extends () => any ? () => TState : TReducer extends (state: TState, ...args: infer TRest) => TState ? FlatFunction<TRest, TState> : never;
+export declare type FlatEffect<TContext, TEffect> = TEffect extends () => infer TReturn ? () => TReturn : TEffect extends (state: TContext, ...args: infer TRest) => infer TReturn ? FlatFunction<TRest, TReturn> : never;
 export declare type FlatFunction<TRest extends unknown[], TReturn = any> = TRest extends [] ? () => TReturn : [
     TRest
 ] extends [never] ? (() => TReturn) : CheckIfParameterOptional<TRest> extends true ? ((payload?: TRest[0]) => TReturn) : ((payload: TRest[0]) => TReturn);
