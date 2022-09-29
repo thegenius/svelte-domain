@@ -1,4 +1,10 @@
 import type {FlatModels, Models, ModelCreator} from './domain';
+export type {ReducerAction, Reducer, EffectAction, 
+    Effect, ModelReducers, ModelEffects,
+    Models, Model,
+    FlatModels, FlatModel, FlatEffect, FlatReducer, FlatFunction,
+    ModelCreator
+} from './domain';
 
 type Subscriber<T> = (value: T) => void;
 
