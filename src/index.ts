@@ -1,4 +1,4 @@
-import type {FlatModels, Models} from './domain';
+import type {FlatModels, Models, ModelCreator} from './domain';
 
 type Subscriber<T> = (value: T) => void;
 
@@ -57,7 +57,7 @@ function customWritable(model: any, start: StartStopNotifier<any> = noop): any {
 	return Object.assign(model, {set}, {subscribe});
 }
 
-export default function createStore<TModels extends Models<TContext>, TContext>(models: TModels) : FlatModels<TModels> {
+export function createStore<TModels extends Models<TContext>, TContext>(models: TModels) : FlatModels<TModels> {
     let flatModels = {} as any;
     Object.keys(models).forEach(key=> {
         flatModels[key] = {
@@ -100,3 +100,5 @@ export default function createStore<TModels extends Models<TContext>, TContext>(
 
     return flatModels;
 }
+
+export const createModel: ModelCreator = () => (mo) => mo as any;
