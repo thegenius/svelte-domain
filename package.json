@@ -1,6 +1,6 @@
 {
   "name": "svelte-domain",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "state manager of svelte",
   "main": "./dist/svelte-domain.umd.js",
   "module": "./dist/svelte-domain.es.js",
