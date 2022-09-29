@@ -76,9 +76,12 @@ export default function createStore<TModels extends Models<TContext>, TContext>(
         if ( modelReducers !== undefined) {
             Object.keys(modelReducers).forEach(reducerKey => {
                 flatModels[key][reducerKey] = function(payload?: any) {
-                    const newState = modelReducers[reducerKey](flatModels[key]['state'], payload);
-                    flatModels[key].set(newState);
-                    return newState;
+                    if (modelReducers != undefined) {
+                        const newState = modelReducers[reducerKey](flatModels[key]['state'], payload);
+                        flatModels[key].set(newState);
+                        return newState;
+                    }
+                    return flatModels[key]['state'];
                 }
             })
         }
@@ -87,7 +90,9 @@ export default function createStore<TModels extends Models<TContext>, TContext>(
         if (modelEffects !== undefined) {
             Object.keys(modelEffects).forEach(effectKey => {
                 flatModels[key][effectKey] = function(payload?: any) {
-                    return modelEffects[effectKey](flatModels, payload);
+                    if (modelEffects != undefined) {
+                        return modelEffects[effectKey](flatModels, payload);
+                    }
                 }
             })
         }

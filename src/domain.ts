@@ -22,6 +22,7 @@ export interface Models<TContext> {
 	[key: string]: Model<TContext>
 }
 
+
 export interface Model<
     TContext,
 	TState = any,
@@ -40,22 +41,21 @@ export interface ModelEffects<TContext> {
 	[key: string]: Effect<TContext>
 }
 
-
 export type FlatModels<TModels extends Models<TContext>, TContext = any> = 
-    { [key in keyof TModels]: FlatModel<TModels[key]> };
-
+    { [key in keyof TModels]: FlatModel<TModels[key]['state'], TModels[key]> };
 
 export type FlatModel<
-    TModel extends Model<any>
+    TState,
+    TModel extends Model<TState>
 > = {state: TModel['state']} & 
     {subscribe: (value: any, invalidate?: any) => any } &
     {[effectKey in keyof TModel['effects']] : FlatEffect<any, TModel['effects'][effectKey]>} &
-    {[reducerKey in keyof TModel['reducers']] : FlatReducer<TModel['state'], TModel['reducers'][reducerKey]>}
+    {[reducerKey in keyof TModel['reducers']] : FlatReducer<TState, TModel['reducers'][reducerKey]>}
 ;
 
 export type FlatReducer<
     TState,
-    TReducer extends Reducer<TState>
+    TReducer
 > =
  TReducer extends () => any? 
     // not taking any parameters
@@ -69,7 +69,7 @@ export type FlatReducer<
 
 export type FlatEffect<
         TContext,
-        TEffect extends Effect<TContext>
+        TEffect
     > =
     TEffect extends () => infer TReturn? 
         // not taking any parameters
