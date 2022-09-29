@@ -1,14 +1,14 @@
 {
   "name": "svelte-domain",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "state manager of svelte",
-  "main": "./dist/svelte-domain.umd.js",
-  "module": "./dist/svelte-domain.es.js",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/svelte-domain.es.js",
-      "require": "./dist/svelte-domain.umd.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
     }
   },
   "scripts": {
