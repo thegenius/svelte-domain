@@ -1,57 +1,59 @@
 function u() {
 }
-function b(s, c = u) {
+function b(c, r = u) {
   let t;
-  const r = /* @__PURE__ */ new Set();
-  function i(e, f) {
+  const s = /* @__PURE__ */ new Set();
+  function o(e, f) {
     return e != e ? f == f : e !== f || e && typeof e == "object" || typeof e == "function";
   }
   function n(e) {
-    if (i(s.state, e) && (s.state = e, t)) {
-      for (const f of r)
+    if (o(c.state, e) && (c.state = e, t)) {
+      for (const f of s)
         f[1]();
-      for (const f of r)
+      for (const f of s)
         f[0]({ state: e });
     }
   }
-  function o(e, f = u) {
+  function i(e, f = u) {
     const a = [e, f];
-    return r.add(a), r.size === 1 && (t = c(n) || u), e({ state: s.state }), () => {
-      r.delete(a), r.size === 0 && (t == null || t(), t = null);
+    return s.add(a), s.size === 1 && (t = r(n) || u), e({ state: c.state }), () => {
+      s.delete(a), s.size === 0 && (t == null || t(), t = null);
     };
   }
-  return Object.assign(s, { set: n }, { subscribe: o });
+  return Object.assign(c, { set: n }, { subscribe: i });
 }
-function j(s) {
-  let c = {};
-  return Object.keys(s).forEach((t) => {
-    c[t] = {
-      state: s[t].state,
-      ...s[t].reducers,
-      ...s[t].effects
+function j(c) {
+  let r = {};
+  return Object.keys(c).forEach((t) => {
+    r[t] = {
+      state: c[t].state,
+      ...c[t].reducers,
+      ...c[t].effects
     };
+  }), Object.keys(r).forEach((t) => {
+    r[t] = b(r[t]);
   }), Object.keys(c).forEach((t) => {
-    c[t] = b(c[t]);
-  }), Object.keys(s).forEach((t) => {
-    let r = s[t].reducers;
-    r !== void 0 && Object.keys(r).forEach((n) => {
-      c[t][n] = function(o) {
-        if (r != null) {
-          const e = r[n](c[t].state, o);
-          return c[t].set(e), e;
+    let s = c[t].reducers;
+    s !== void 0 && Object.keys(s).forEach((n) => {
+      r[t][n] = function(i) {
+        if (s != null) {
+          const e = s[n](r[t].state, i);
+          return r[t].set(e), e;
         }
-        return c[t].state;
+        return r[t].state;
       };
     });
-    let i = s[t].effects;
-    i !== void 0 && Object.keys(i).forEach((n) => {
-      c[t][n] = function(o) {
-        if (i != null)
-          return i[n](c, o);
+    let o = c[t].effects;
+    o !== void 0 && Object.keys(o).forEach((n) => {
+      r[t][n] = function(i) {
+        if (o != null)
+          return o[n](r, i);
       };
     });
-  }), c;
+  }), r;
 }
+const E = () => (c) => c;
 export {
-  j as default
+  E as createModel,
+  j as createStore
 };
