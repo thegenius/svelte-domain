@@ -120,6 +120,14 @@ export default store;
 ![](https://github.com/thegenius/svelte-domain/blob/main/docs/tips_in_effect_actions.jpg)
 
 
+## Example
+```
+git clone https://github.com/thegenius/svelte-domain.git
+cd svelte-domain/example
+npm install
+npm run dev
+```
+
 ## LICENSE
 ```
 MIT
