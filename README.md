@@ -2,6 +2,9 @@
 [![package size](https://img.badgesize.io/thegenius/svelte-domain/main/dist/index.umd.js.svg)](https://www.npmjs.com/package/svelte-domain)
 [![gzip size](https://img.badgesize.io/thegenius/svelte-domain/main/dist/index.umd.js.svg?compression=gzip)](https://www.npmjs.com/package/svelte-domain)
 [![code quality](https://api.codiga.io/project/34698/score/svg)](https://www.npmjs.com/package/svelte-domain)
+[![license](https://img.shields.io/badge/license-MIT-green)](https://www.npmjs.com/package/svelte-domain)
+![npm](https://img.shields.io/npm/dw/svelte-domain)
+![dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
 
 This is a library of svelte state management inspired by redux and rematch.
 
