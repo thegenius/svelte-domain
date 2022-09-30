@@ -18,6 +18,11 @@ effect: function taking context and payload as input, produce any as output.
         context contains all effects cross all domains  
 ```
 
+## 0. Install
+```
+npm install svelte-domain
+```
+
 
 ## 1. Create a simple model
 ```typescript
