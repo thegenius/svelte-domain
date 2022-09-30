@@ -1,5 +1,5 @@
 [![npm version](https://badge.fury.io/js/svelte-domain.svg)](https://badge.fury.io/js/svelte-domain)  
-[![package size](https://img.badgesize.io/thegenius/svelte-domain/master/dist/index.umd.js&label=size)]()
+[![package size](https://img.badgesize.io/thegenius/svelte-domain/main/dist/index.umd.js&label=size)]()
 
 
 This is a library of svelte state management inspired by redux and rematch.
