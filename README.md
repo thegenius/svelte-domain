@@ -1,3 +1,6 @@
+[![npm version](https://badge.fury.io/js/svelte-domain.svg)](https://badge.fury.io/js/svelte-domain)  
+
+
 This is a library of svelte state management inspired by redux and rematch.
 
 ## Concept
