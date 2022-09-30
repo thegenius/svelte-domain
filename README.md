@@ -1,6 +1,7 @@
 This is a library of svelte state management inspired by redux and rematch.
 
 ## Concept
+```
 domain: An object contains 'state'、'reducer'、'effect'.  
 state: date fields for domain  
 reducer: function taking state and payload as input, produce state as output.  
@@ -12,6 +13,7 @@ effect: function taking context and payload as input, produce any as output.
         context contains all states cross all domains  
         context contains all reducers cross all domains  
         context contains all effects cross all domains  
+```
 
 
 ## 1. Create a simple model
@@ -95,6 +97,14 @@ export default store;
   multi count increment
 </button>
 ```
+
+## Typescript Support
+![](https://github.com/thegenius/svelte-domain/blob/main/docs/tips_in_svelte.jpg)
+![](https://github.com/thegenius/svelte-domain/blob/main/docs/tips_in_reducer.jpg)
+![](https://github.com/thegenius/svelte-domain/blob/main/docs/tips_in_effect_multi_domain.jpg)
+![](https://github.com/thegenius/svelte-domain/blob/main/docs/tips_in_effect_actions.jpg)
+
+
 ## LICENSE
 ```
 MIT
