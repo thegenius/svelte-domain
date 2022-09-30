@@ -1,17 +1,17 @@
 This is a library of svelte state management inspired by redux and rematch.
 
 ## Concept
-domain: An object contains 'state'、'reducer'、'effect'.
-state: date fields for domain
-reducer: function taking state and payload as input, produce state as output.
-         reducer output will be updated into state.
-         reducer is the only way to update state.
-effect: function taking context and payload as input, produce any as output.
-        effect can not update state
-        effect can be async
-        context contains all states cross all domains
-        context contains all reducers cross all domains
-        context contains all effects cross all domains
+domain: An object contains 'state'、'reducer'、'effect'.  
+state: date fields for domain  
+reducer: function taking state and payload as input, produce state as output.  
+         reducer output will be updated into state.  
+         reducer is the only way to update state.  
+effect: function taking context and payload as input, produce any as output.  
+        effect can not update state  
+        effect can be async  
+        context contains all states cross all domains  
+        context contains all reducers cross all domains  
+        context contains all effects cross all domains  
 
 
 ## 1. Create a simple model
@@ -94,4 +94,8 @@ export default store;
 <button on:click={increment3}>
   multi count increment
 </button>
+```
+## LICENSE
+```
+MIT
 ```
