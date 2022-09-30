@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/svelte-domain.svg)](https://badge.fury.io/js/svelte-domain)  
+[![npm version](https://badge.fury.io/js/svelte-domain.svg)](https://badge.fury.io/js/svelte-domain)
 [![package size](https://img.badgesize.io/thegenius/svelte-domain/main/dist/index.umd.js.svg)](https://www.npmjs.com/package/svelte-domain)
 [![gzip size](https://img.badgesize.io/thegenius/svelte-domain/main/dist/index.umd.js.svg?compression=gzip)](https://www.npmjs.com/package/svelte-domain)
 
