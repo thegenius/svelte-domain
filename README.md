@@ -3,10 +3,13 @@ This is a library of svelte state management inspired by redux and rematch.
 ## Concept
 ```
 domain: An object contains 'state'、'reducer'、'effect'.  
+
 state: date fields for domain  
+
 reducer: function taking state and payload as input, produce state as output.  
          reducer output will be updated into state.  
          reducer is the only way to update state.  
+
 effect: function taking context and payload as input, produce any as output.  
         effect can not update state  
         effect can be async  
@@ -99,9 +102,16 @@ export default store;
 ```
 
 ## Typescript Support
-![](https://github.com/thegenius/svelte-domain/blob/main/docs/tips_in_svelte.jpg)
+### enjoy the typescript support in svelte
+![](https://github.com/thegenius/svelte-domain/blob/main/docs/tips_in_svelte.jpg)  
+
+### enjoy the typescript support in domain reducer  
 ![](https://github.com/thegenius/svelte-domain/blob/main/docs/tips_in_reducer.jpg)
+
+### enjoy the typescript support in domain effect for cross domain
 ![](https://github.com/thegenius/svelte-domain/blob/main/docs/tips_in_effect_multi_domain.jpg)
+
+### enjoy the typescript support in domain effect for cross domain action
 ![](https://github.com/thegenius/svelte-domain/blob/main/docs/tips_in_effect_actions.jpg)
 
 
