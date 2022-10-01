@@ -115,4 +115,3 @@ type CheckIfParameterOptional<P> = P extends [unknown, ...unknown[]]
 }
 
 
-export const createModel: ModelCreator = () => (mo) => mo as any;

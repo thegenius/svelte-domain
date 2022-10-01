@@ -6,7 +6,21 @@
 ![npm](https://img.shields.io/npm/dw/svelte-domain)
 ![dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
 
+## svelte-domain
 This is a library of svelte state management inspired by redux and rematch.
+
+## Features
+```
+1. Small: Zero dependency and really small, only 1.26KB and gziped 624B
+2. Clean: Only 2 API you should learn, createModel, createStore.
+3. Support async: Naturally async support you will dream about after using writable.
+4. Cool typescript support: You can enjoy all the good parts of typescript.
+5. Elegant: clean concepts inspired by elm, dva, redux and rematch
+```
+
+## Demo
+[Counter](https://stackblitz.com/edit/svelte-domain-counter?file=src/lib/Counter.svelte)
+
 
 ## Concept
 ```
