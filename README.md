@@ -19,7 +19,7 @@ This is a library of svelte state management inspired by redux and rematch.
 ```
 
 ## Demo
-[Counter](https://stackblitz.com/edit/svelte-domain-counter?file=src/lib/Counter.svelte)
+[Counter](https://stackblitz.com/edit/svelte-domain-counter?file=src/lib/Counter.svelte){:target="_blank"}
 
 
 ## Concept
