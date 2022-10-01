@@ -23,7 +23,8 @@
     "utils",
     "typescript",
     "svelte",
-    "state"
+    "state",
+    "async"
   ],
   "repository": {
     "type": "git",
