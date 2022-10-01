@@ -26,7 +26,7 @@ This is a library for svelte state management inspired by dva and rematch.
 ```
 domain: An object contains 'state'、'reducer'、'effect'.  
 
-state: date fields for domain  
+state: data fields for domain  
 
 reducer: function taking state and payload as input, produce state as output.  
          reducer output will be updated into state.  
