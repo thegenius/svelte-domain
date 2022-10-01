@@ -6,8 +6,8 @@
 ![npm](https://img.shields.io/npm/dw/svelte-domain)
 ![dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
 
-## svelte-domain
-This is a library of svelte state management inspired by redux and rematch.
+# svelte-domain
+This is a library for svelte state management inspired by redux and rematch.
 
 ## Features
 ```
