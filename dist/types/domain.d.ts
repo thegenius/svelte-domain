@@ -54,5 +54,4 @@ export interface ModelCreator {
         reducers: R;
     });
 }
-export declare const createModel: ModelCreator;
 export {};
